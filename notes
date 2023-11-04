@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAT@</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  
+        body {
+        overflow-x: hidden; /* This hides the horizontal scrollbar */
+        }
+        /* Define the keyframes for the zoom effect */
+        @keyframes zoomIn {
+        0% {
+        transform: scale(1);
+        }
+        50% {
+        transform: scale(1.1);
+        }
+        100% {
+        transform: scale(1);
+        }
+        }
+        .head,body{
+        font-family:Georgia, 'Times New Roman', Times, serif; font-style: italic;font-weight: bold; 
+        }
+
+        /* Apply the animation and shadow to the logo */
+        .navbar-brand img {
+        animation: zoomIn 2s infinite;
+        /* You can adjust the duration, iteration count, and other properties */
+        transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar-brand img:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+        }
+        .custom-background{
+       background-color: #dba212;
+        }
+        /* CSS for Testimonials Hover Effect */
+        .testimonial-section .testimonial-card {
+         position: relative;
+        transition: transform 0.3s;
+        }
+
+        .testimonial-section .testimonial-card:hover {
+         transform: scale(1.05); /* Increase the card size on hover */
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add a shadow on hover */
+        }
+            /* Basic styles for the header */
+            header {
+            background-image: url('https://img.freepik.com/premium-photo/delivery-boy-ride-scooter-delivery-service-order-fast-shipping-3d-flat-line-art-background_460848-7389.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #f5f5f5;
+            font-size: 3em;
+            margin: 20px 0;
+            animation: slideInDown 1s both;
+        }
+
+        p {
+            color: #f5f5f5;
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: fadeIn 2s both;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+            font-size: 1.2em;
+            margin-top: 20px;
+            animation: fadeIn 2s both;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background-color: #eee;
+        }
+
+        /* Additional feature styles */
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 2s both;
+        }
+
+        .col-md-4 {
+            text-align: center;
+            animation: slideIn 1s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Basic styles for the container */
+        .container {
+            background-color: #f0c60aca;
+            border-radius: 4%;
+            color: white;
+            padding: 30px;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #f5f5f5;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: #f5f5f5;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Paragraphs */
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: "\2022";
+            position: absolute;
+            left: -20px;
+            color: #f5f5f5;
+        }
+
+        /* Testimonials */
+        .testimonial-section {
+            background-color: #f0c60aca;
+        }
+
+        .card {
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background-color: rgba(240, 198, 12, 0.5);
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .card-text {
+            font-size: 1.2em;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Form button */
+        .btn-primary {
+            background-color: #f0c60aca;
+            border-color: #f0c60aca;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0c60a;
+        }
+         /* Footer styling */
+         footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: #f0c60a; /* Hover color */
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons a {
+            font-size: 24px;
+        }
+
+        footer .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        footer .social-icons a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        /* Additional features */
+        .address,
+        .phone,
+        .email {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            footer .social-icons a {
+                font-size: 20px;
+            }
+
+            footer a {
+                font-size: 16px;
+            }
+        }
+</style>
+</head>
+
+<body class="custom-background">
+    <div id="root">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-yellow">
+    <a class="navbar-brand" href="#">
+        <img src="/imgs/logo.jpg" alt="Your Logo" width="200" height="100" style="border-radius: 6%; padding-left: 9%;">
+    </a>
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-utensils"></i> Restaurants
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <li><a class="dropdown-item" href="#">Nearby</a></li>
+                        <li><a class="dropdown-item" href="#">Popular</a></li>
+                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-tags"></i> Offers
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="#">Discounts</a></li>
+                        <li><a class="dropdown-item" href="#">Combo Offers</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutus"><i class="fas fa-info-circle"></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu"><i class="fas fa-book-open"></i> Our Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#specials"><i class="fas fa-star"></i> Specials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-us-section"><i class="fas fa-phone"></i> Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <li><a class="dropdown-item" href="#">View Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+ <!-- toggle icon actions -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggleButton = document.querySelector('.navbar-toggler');
+        var navBarMenu = document.querySelector('.navbar-collapse');
+
+        toggleButton.addEventListener('click', function() {
+            navBarMenu.classList.toggle('show');
+        });
+    });
+</script>
+<!-- scrolling speed -->
+<script>
+    $(document).ready(function() {
+        $('a').on('click', function(event) {
+            if (this.hash !== '') {
+                event.preventDefault();
+                const hash = this.hash;
+                $('html, body').animate(
+                    {
+                        scrollTop: $(hash).offset().top
+                    },
+                    800, // 800ms or 0.8s for smooth scroll
+                    function() {
+                        window.location.hash = hash;
+                    }
+                );
+            }
+        });
+    });
+// jQuery to handle the dropdown on click
+$('.nav-item').click(function() {
+    $(this).children('.dropdown-menu').toggle();
+});
+</script>
+    <!-- Header Section with Background Image -->
+<header class="text-white text-center py-5" style="background-image: url('https://img.freepik.com/premium-photo/delivery-boy-ride-scooter-delivery-service-order-fast-shipping-3d-flat-line-art-background_460848-7389.jpg'); background-size: cover; background-position: center;">
+    <h1 style="color: #f5f5f5;">Welcome to Eat@</h1>
+    <p>Your favorite food delivered to your doorstep</p>
+    <a href="menu.html" class="btn btn-light btn-lg">View Menu</a>
+    <!-- Additional Features -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <i class="fas fa-utensils fa-3x"></i>
+            <h3>Delicious Cuisine</h3>
+            <p>Explore a diverse menu of mouthwatering dishes.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-clock fa-3x"></i>
+            <h3>Fast Delivery</h3>
+            <p>We ensure prompt delivery to satisfy your hunger.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-heart fa-3x"></i>
+            <h3>Quality Ingredients</h3>
+            <p>We use fresh, locally-sourced ingredients.</p>
+        </div>
+    </div>
+</header>
+
+<div class="container my-"  style="background-color: #f0c60aca; border-radius: 4%; color: white;">
+    <!-- About Section -->
+    <section class="container my-5" id="aboutus">
+        <h2>About Us</h2>
+        <p>Welcome to Eat@, where flavor meets convenience! We're your go-to destination for delectable dishes delivered straight to your doorstep. At Eat@, we're passionate about food and committed to providing you with a memorable dining experience without leaving the comfort of your home.</p>
+    </section>
+    <section class="container my-5">
+        <h2>Our Story</h2>
+        <p>Eat@ was born out of a shared love for food, a desire to explore diverse culinary traditions, and a commitment to making your dining experiences extraordinary. Our journey began in a small kitchen with a big vision - to create a platform where food enthusiasts like you can enjoy a wide range of delicious dishes made with the finest ingredients.</p>
+    </section>
+    <section class="container my-5">
+        <h2>What Sets Us Apart</h2>
+        <p><ul>
+            <li><strong>Culinary Excellence:</strong> Our team of experienced chefs is dedicated to crafting mouthwatering meals that tantalize your taste buds. From traditional favorites to innovative fusion creations, we're always pushing the boundaries of flavor.</li>
+            <li><strong>Fresh Ingredients:</strong> We believe in the quality of ingredients, sourcing locally whenever possible to ensure the freshest and most flavorful dishes.</li>
+            <li><strong>Convenient Ordering:</strong> Ordering from Eat@ is a breeze. Our user-friendly website and mobile app make it simple to browse our menu, place orders, and track your deliveries in real-time.</li>
+            <li><strong>Prompt Delivery:</strong> We understand that hunger doesn't wait. That's why we strive to deliver your order promptly, ensuring your meal arrives hot and ready to enjoy.</li>
+            <li><strong>Customer-Centric Approach:</strong> Your satisfaction is our priority. Our dedicated customer support team is always available to assist you with any questions or concerns.</li>
+        </ul></p>
+    </section>
+    <section class="container my-5" id="menu">
+        <h2>Our Menu</h2>
+        <p>Explore our extensive menu, featuring a wide array of dishes that cater to all tastes and dietary preferences. Whether you're a fan of hearty comfort food, health-conscious options, or crave international cuisine, Eat@ has something for everyone.</p>
+
+    <h2>Join Us on this Culinary Adventure</h2>
+    <p>We invite you to join us on this culinary adventure. Whether it's a solo meal, a family feast, or a virtual gathering with friends, Eat@ is here to make your dining experience exceptional. Let us be your culinary storytellers, bringing the world of flavors to your doorstep.</p>
+
+    <p>Thank you for choosing Eat@. We look forward to serving you a memorable meal, one bite at a time.</p>
+    
+    <p>Savor the moment, savor the flavor, with Eat@.</p>
+    </section>
+    <!-- Testimonials Section -->
+<section class="container my-5 testimonial-section">
+    <h2>What Our Customers Say</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card testimonial-card">
+                <div class="card-body">
+                    <h5 class="card-title">John Doe</h5>
+                    <p class="card-text">"I love the variety of dishes offered by Eat@. Their delivery is always on time, and the food is delicious!"</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card testimonial-card">
+                <div class="card-body">
+                    <h5 class="card-title">Jane Smith</h5>
+                    <p class="card-text">"Eat@ has become my go-to choice for ordering food. The quality and taste are outstanding."</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card testimonial-card">
+                <div class="card-body">
+                    <h5 class="card-title">Mike Johnson</h5>
+                    <p class="card-text">"I've tried several dishes from Eat@, and each one has been a delightful experience. Highly recommended!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Specials Section -->
+<section class="container my-5" id="specials">
+    <h2>Specials</h2>
+    <p>Check out our latest specials and offers:</p>
+    <ul>
+        <li><strong>Today's Special:</strong> Enjoy a 20% discount on our chef's special dish.</li>
+        <li><strong>Weekend Deals:</strong> Every weekend, get a free dessert with your order.</li>
+        <li><strong>Happy Hour:</strong> Join us for happy hour from 4 PM to 6 PM and get 50% off on selected drinks.</li>
+    </ul>
+</section>
+    <div id="contact-us-section" class="container my-5"></div>
+    <!-- Contact Section -->
+    <section class="container my-5">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to contact us.</p>
+        <form>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+</div>
+</div>
+<footer class="bg-dark text-white text-center py-2">
+    <p>&copy; 2023 Eat@ - Your Favorite Food Delivered</p>
+    <div class="address">Address: 123 Main Street, City, Country</div>
+    <div class="phone">Phone: +1234567890</div>
+    <div class="email">Email: info@eatat.com</div>
+    <div class="social-icons">
+        <!-- Social media icons with Font Awesome classes -->
+        <a href="#" class="fab fa-facebook" style="color: #3b5998;"></a>
+        <a href="#" class="fab fa-twitter" style="color: #00acee;"></a>
+        <a href="#" class="fab fa-instagram" style="color: #bc2a8d;"></a>
+        <a href="#" class="fab fa-linkedin" style="color: #0e76a8;"></a>
+        <a href="#" class="fab fa-pinterest" style="color: #bd081c;"></a>
+        <!-- Add more social icons as needed -->
+    </div>
+</footer>
+
+<!-- Add Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Toggle the navigation when the toggle icon is clicked
+        $('.navbar-toggler').click(function() {
+            $('#navbarNav').toggleClass('show');
+        });
+    });
+</script>  
+</div>
+</body>
+</html>
