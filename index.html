@@ -331,7 +331,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             <li><a class="dropdown-item" href="/templates/offers.html">Discounts</a></li> <!-- Fixed typo here -->
-                            <li><a class="dropdown-item" href="#">Combo Offers</a></li>
+                            <li><a class="dropdown-item" href="/templates/combo.html">Combo Offers</a></li>
                         </ul>
                     </li>
                     
@@ -532,13 +532,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        // Toggle the navigation when the toggle icon is clicked
-        $('.navbar-toggler').click(function() {
-            $('#navbarNav').toggleClass('show');
-        });
-    });
-
     // Function to check if an element is in the viewport
 function isInViewport(element) {
     var rect = element.getBoundingClientRect();
@@ -549,7 +542,6 @@ function isInViewport(element) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
 // Function to handle animations
 function animateSections() {
     const sections = document.querySelectorAll('.my-5');
@@ -564,59 +556,23 @@ function animateSections() {
 
 // Add an event listener for scroll
 window.addEventListener('scroll', animateSections);
-
 // Initial call to animate sections when the page loads
 animateSections();
 </script>  
+<script>
+    // Add an event listener for scroll
+    window.addEventListener('scroll', animateSections);
+    // Initial call to animate sections when the page loads
+    animateSections();
+</script>
 <script>
     $(document).ready(function() {
         // Toggle the navigation when the toggle icon is clicked
         $('.navbar-toggler').click(function() {
             $('#navbarNav').toggleClass('show');
         });
-
-        // Add smooth scrolling to anchor links
-        $('a[href^="#"]').on('click', function(event) {
-            var target = $(this.getAttribute('href'));
-            if (target.length) {
-                event.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top
-                }, 1000); // You can adjust the duration (in milliseconds) to control the scroll speed
-            }
-        });
     });
-
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-        var rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    // Function to handle animations
-    function animateSections() {
-        const sections = document.querySelectorAll('.my-5');
-
-        sections.forEach((section) => {
-            if (isInViewport(section)) {
-                section.style.opacity = 1;
-                section.style.transform = 'translateY(0)';
-            }
-        });
-    }
-
-    // Add an event listener for scroll
-    window.addEventListener('scroll', animateSections);
-
-    // Initial call to animate sections when the page loads
-    animateSections();
-</script>
-
+</script>  
 </div>
 </body>
 </html>
