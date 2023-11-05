@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="app.js"></script>
-    <!-- Include React and ReactDOM libraries -->
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <!-- Custom CSS -->
     <style>
         
    
      /* Customize the navbar toggler icon */
      .navbar-toggler-icon::before {
-            content: "☰"; /* You can use any other suitable icon or text */
+           
             font-size: 24px;
         }
 
@@ -374,73 +371,212 @@
     background-color: #FFC107; /* Selected background color */
     color: #fff; /* Selected text color */
 }
+  /* Apply the animation and shadow to the logo */
+  .navbar-brand img {
+        animation: zoomIn 2s infinite;
+        /* You can adjust the duration, iteration count, and other properties */
+        transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar-brand img:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+        }
+        .custom-background{
+       background-color: #dba212;
+        }
+        
+         /* Navbar styling */
+         .navbar {
+        background-color: #dba212 /* Change to your desired background color */
+        }
+        .navbar-brand img {
+        border-radius: 6%;
+        padding-left: 9%;
+        }
 
+        /* Dropdown styling */
+        .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        }
+        .navbar-nav .nav-item {
+            padding: 15px; /* Adjust the padding as needed */
+            transition: transform 0.2s; /* Add transition for smoother animation */
+        }
+     
+        /* Style for the search input field */
+     
+        /* Style for the search icon button */
+        .input-group .btn {
+            border-radius: 0; /* Remove rounded corners */
+            background-color: #f0eaea; /* Match the background color */
+            margin: auto;
+        }
+
+        .bgmnubtn {
+            background-image: url('/imgs/menubgimg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        .animated-button {
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.animated-button:hover {
+    background-color: #555;
+    color: #fff;
+    transform: scale(1.05); /* Scale the button on hover for a slight zoom effect */
+}
+
+@media (max-width: 768px) {
+    .animated-button {
+        font-size: 14px; /* Reduce the font size on smaller screens */
+    }
+}
+   /* Footer styling */
+   footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: #f0c60a; /* Hover color */
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons a {
+            font-size: 24px;
+        }
+
+        footer .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        footer .social-icons a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        /* Additional features */
+        .address,
+        .phone,
+        .email {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            footer .social-icons a {
+                font-size: 20px;
+            }
+
+            footer a {
+                font-size: 16px;
+            }
+        }
 
     </style>
 </head>
 <body class="custom-background">
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
-    <a class="navbar-brand" href="#" style="color: #f5f5f5;">EAT@</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/templates/index.html"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li class="nav-item">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-tags"></i> Offers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-users"></i> About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-star"></i> Specials</a>
-            </li>
-            <div class="dropdown">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> My Profile</a>
-                <div class="dropdown-content">
-                    <div class="sub-dropdown">
-                        <a href="#">View Profile</a>
-                        <div class="sub-dropdown-content">
-                            <a href="#">Profile Option 1</a>
-                            <a href="#">Profile Option 2</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-yellow">
+        <a class="navbar-brand" href="#">
+            <img src="/imgs/logo.jpg" alt="Your Logo" width="100" height="100" class="rounded-3" style="margin-left: 5%; padding: 5%;">
+        </a>
+        
+        <div class="container;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #dba212; padding-right: 0%;">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-utensils me-2"></i> Restaurants
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="#">Nearby</a></li>
+                            <li><a class="dropdown-item" href="#">Popular</a></li>
+                            <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-tags me-2"></i> Offers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="/templates/offers.html">Discounts</a></li> <!-- Fixed typo here -->
+                            <li><a class="dropdown-item" href="#">Combo Offers</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus"><i class="fas fa-info-circle me-2"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/menu.html"><i class="fas fa-book-open me-2"></i> Our Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#specials"><i class="fas fa-star me-2"></i> Specials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us-section"><i class="fas fa-phone me-2"></i> Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i> Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <li><a class="dropdown-item" href="/templates/profile.html">View Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="background-color: #f0eaea;">
+                            <div class="input-group-append" style="background-color: #f0eaea;">
+                                <button class="btn btn-outline-success" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="sub-dropdown">
-                        <a href="#">Settings</a>
-                        <div class="sub-dropdown-content">
-                            <a href="#">Setting Option 1</a>
-                            <a href="#">Setting Option 2</a>
-                        </div>
-                    </div>
-                    <a href="#">Logout</a>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </ul>
-    </div>
-</nav>
+        </div>
+    </nav>
  <!-- Button to toggle display of vegetarian section -->
- <div class="bgmnubtn" style="background-color: #444;padding: 3%;">
+<div class="bgmnubtn">
     <div class="text-center d-flex justify-content-center my-5" style="padding-top: 3%;">
-        <button class="btn btn-primary mx-3" onclick="showVegetarian()">CLICK HERE TO CHANGE MENU TO VEG & NON VEG</button>
+        <button class="btn btn-primary mx-3 animated-button" onclick="showVegetarian()">CLICK HERE TO CHANGE MENU TO VEG & NON VEG</button>
+    </div>
 </div>
+
 </div>
 <div class="col-md-6">
     <label for="rating-filter" style="color: #fff;">Filter by Rating:</label>
@@ -452,11 +588,10 @@
         <!-- Add more options if needed -->
     </select>
 </div>
-<div class="container my-5" id="scrollable-content">
+
   <!-- Section for Vegetarian Menu -->
-  <section id="vegetarian-section" class="bg-light py-5">
-    <div class="container">
-        <h2>Vegetarian Menu</h2>
+  <section id="vegetarian-section" class="bg-light py-5" >
+        <h2 style="background-color:  #4edb12;">Vegetarian Menu</h2>
         <div class="row">
            <!-- Vegetarian Food Items -->
 <div class="col-md-4">
@@ -577,12 +712,11 @@
 </div>
 
         </div>
-    </div>
+    
 </section>
 <!-- Section for Non-Vegetarian Menu -->
 <section id="non-vegetarian-section" class="bg-light py-5">
-    <div class="container">
-        <h2>Non-Vegetarian Menu</h2>
+        <h2 style="background-color:  #db1212;">Non-Vegetarian Menu</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -697,12 +831,8 @@
             <a href="/templates/order.html" class="btn btn-primary">Order Now</a>
         </div>
     </div>
-</div>
 </section>
 <!-- Button to toggle display of vegetarian section -->
-</div>
-
-
 <script>
     function showNonVegetarian() {
         var vegetarianSection = document.getElementById("vegetarian-section");
@@ -753,9 +883,83 @@ document.getElementById('rating-filter').addEventListener('change', function() {
 });
 
 </script>
+<script>
+        // Add smooth scrolling to anchor links
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000); // You can adjust the duration (in milliseconds) to control the scroll speed
+            }
+        });
 
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    // Function to handle animations
+    function animateSections() {
+        const sections = document.querySelectorAll('.my-5');
 
+        sections.forEach((section) => {
+            if (isInViewport(section)) {
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    // Add an event listener for scroll
+    window.addEventListener('scroll', animateSections);
+
+    // Initial call to animate sections when the page loads
+    animateSections();
+</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle the navigation when the toggle icon is clicked
+            $('.navbar-toggler').click(function() {
+                $('#navbarNav').toggleClass('show');
+            });
+        });
+    </script>  
+       <!-- Footer styling -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>About Us</h4>
+                <p>Welcome to Eat@, your one-stop destination for delicious food delivered to your doorstep. We are passionate about serving quality meals made from fresh ingredients.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Contact Information</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                    <li><i class="fas fa-phone"></i> 9791234293</li>
+                    <li><i class="fas fa-envelope"></i> info@eatat.com</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Connect with Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="fab fa-facebook" style="color: rgb(0, 51, 255);"></a>
+                    <a href="#" class="fab fa-instagram" style="color: rgb(255, 30, 0);"></a>
+                    <a href="#" class="fab fa-linkedin" style="color: rgb(0, 123, 255);"></a>
+                    <a href="#" class="fab fa-pinterest" style="color: rgb(255, 0, 0);"></a>
+                    <!-- Add more social icons as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
