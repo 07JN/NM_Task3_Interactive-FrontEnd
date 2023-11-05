@@ -10,335 +10,425 @@
 </head>
 <body>
     <style>
-            
-   
-     /* Customize the navbar toggler icon */
-     .navbar-toggler-icon::before {
-            content: "☰"; /* You can use any other suitable icon or text */
+  
+        body {
+        overflow-x: hidden; /* This hides the horizontal scrollbar */
+        }
+        /* Define the keyframes for the zoom effect */
+        @keyframes zoomIn {
+        0% {
+        transform: scale(1);
+        }
+        50% {
+        transform: scale(1.1);
+        }
+        100% {
+        transform: scale(1);
+        }
+        }
+        /* Apply the animation and shadow to the logo */
+        .navbar-brand img {
+        animation: zoomIn 2s infinite;
+        /* You can adjust the duration, iteration count, and other properties */
+        transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar-brand img:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+        }
+        .head,body{
+        font-family:Georgia, 'Times New Roman', Times, serif; font-style: italic;font-weight: bold; 
+        }
+
+        .custom-background{
+       background-color: #dba212;
+        }
+        /* CSS for Testimonials Hover Effect */
+        .testimonial-section .testimonial-card {
+         position: relative;
+        transition: transform 0.3s;
+        }
+
+        .testimonial-section .testimonial-card:hover {
+         transform: scale(1.05); /* Increase the card size on hover */
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add a shadow on hover */
+        }
+            /* Basic styles for the header */
+            header {
+            background-image: url('/imgs/header.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #f5f5f5;
+            font-size: 3em;
+            margin: 20px 0;
+            animation: slideInDown 1s both;
+        }
+
+        p {
+            color: #f5f5f5;
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: fadeIn 2s both;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+            font-size: 1.2em;
+            margin-top: 20px;
+            animation: fadeIn 2s both;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background-color: #eee;
+        }
+
+        /* Additional feature styles */
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 2s both;
+        }
+
+        .col-md-4 {
+            text-align: center;
+            animation: slideIn 1s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Basic styles for the container */
+        .container {
+            background-color: #f0c60aca;
+            border-radius: 4%;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #f5f5f5;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: #f5f5f5;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Paragraphs */
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        /* Testimonials */
+        .testimonial-section {
+            background-color: #f0c60aca;
+        }
+        .card {
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-bottom: 30px;
+        }
+        .card:hover {
+            transform: scale(1.09);
+            background-color: rgba(240, 198, 12, 0.5);
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .card-text {
+            font-size: 1.2em;
+            color: #222;
+        }
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Form button */
+        .btn-primary {
+            background-color: #f0c60aca;
+            border-color: #f0c60aca;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0c60a;
+        }
+         /* Footer styling */
+         footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: #f0c60a; /* Hover color */
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons a {
             font-size: 24px;
         }
 
-        /* Professional styling for the navigation links */
-        .navbar-custom .navbar-nav .nav-item {
-            margin: 0 10px;
+        footer .social-icons a:hover {
+            transform: scale(1.2);
         }
 
-        .navbar-custom .navbar-nav .nav-link {
-            color: #FFF;
+        footer .social-icons a:not(:last-child) {
+            margin-right: 10px;
         }
 
-        .navbar-custom .navbar-nav .nav-link:hover {
-            color: #0fcfcc;
+        /* Additional features */
+        .address,
+        .phone,
+        .email {
+            margin-bottom: 5px;
         }
 
-        /* Style the collapsed navigation when toggle icon is clicked */
-        .navbar-custom .navbar-toggler {
-            background-color: #8a8577ee;
-        }
-
-        .navbar-custom .navbar-toggler:focus {
-            outline: none;
-        }
-
-        .navbar-custom .navbar-collapse {
-            background-color: #eacc0bee;
-        }
-    /* Custom CSS for your navigation bar */
-    .navbar-custom {
-        background-color: #c3991ae7; /* Change to your desired background color */
-    }
-
-    .navbar-custom .navbar-nav {
-        align-items: center; /* Center items vertically */
-    }
-
-    .navbar-custom .nav-item {
-            margin-right: 10px; /* Add some margin between items */
-        }
-    .navbar-custom .nav-link {
-        color: #FFF; /* Change link color */
-    }
-
-    .navbar-custom .nav-link:hover {
-        color: #0fcfcc; /* Change link color on hover */
-    }
-    .navbar-custom .nav-link i {
-            margin-right: 5px; /* Add margin to the right of icons */
-        
-        }
-
-    .navbar-custom .search-bar {
-        display: flex;
-    }
-
-    .navbar-custom .form-control {
-        border: none; /* Remove input border */
-        border-radius: none; /* Remove border radius */
-        background-color: #ffffff; /* Change input background color */
-        color: #000000; /* Change input text color */
-    }
-
-    .navbar-custom .form-control:focus {
-        box-shadow: none; /* Remove input focus box shadow */
-    }
-
-    .navbar-custom .input-group-append button {
-        background-color: whitesmoke; /* Remove background color for search button */
-        color: #040000; /* Change button color */
-        cursor: pointer;
-    }
-
-    .navbar-custom .input-group-append button:hover {
-        color: #FFC107; /* Change button color on hover */
-    }
-
-    #navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    body {
-        overflow-x: hidden; /* This hides the horizontal scrollbar */
-    }
-
-    #scrollable-content {
-        max-height: 600px; /* Adjust the height to your preference */
-        width: 100%;
-        overflow-y: auto;
-    }
-
-    /* Add responsive styles */
-    @media (max-width: 768px) {
-        .navbar-custom .nav-item {
-            padding: 0 10px;
-        }
-    }
-         /* Style for the profile dropdown */
-         .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #c58a0bb8; /* Dropdown background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 20%;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: #fff; /* Dropdown link color */
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            border-radius: 40%;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #c3991ae7; /* Dropdown link background color on hover */
-            color: #0fcfcc;
-        }
-
-        /* Style for the secondary dropdown */
-        .sub-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .sub-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #c58a0bb8; /* Dropdown background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 0;
-            right: 100%;
-            border-radius: 23%;
-        }
-
-        .sub-dropdown:hover .sub-dropdown-content {
-            display: block;
-        }
-        /* Define the keyframes for the zoom effect */
-@keyframes zoomIn {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Apply the animation and shadow to the logo */
-.navbar-brand img {
-    animation: zoomIn 2s infinite;
-    /* You can adjust the duration, iteration count, and other properties */
-    transition: box-shadow 0.3s ease-in-out;
-}
-.navbar-brand img:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
-}
-  .custom-background{
-    background-color: #dba212;
-  }
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-.card:hover {
-      transform: scale(1.05); /* Enlarge the card slightly on hover */
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
-  }
-/* Offer Card styles */
-.card {
-    margin-bottom: 20px;
-}
-
-/* Media query for medium-sized screens */
-@media (max-width: 768px) {
-    /* Adjust the spacing and size of Offer Cards for medium screens */
-    .card {
-        margin: 10px;
-        width: 100%;
-    }
-}
-
-/* Media query for small screens */
-@media (max-width: 576px) {
-    /* Further adjust the spacing and size of Offer Cards for small screens */
-    .card {
-        margin: 10px auto;
-        width: 90%;
-    }
-
-    /* Center-align text within the cards */
-    .card-body {
-        text-align: center;
-    }
-}
-
-        /* Page title styles */
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Offer Card styles */
-        .card {
-            margin-bottom: 20px;
-        }
-        
-        /* Media query for medium-sized screens */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            /* Reduce the font size of the page title */
-            h1 {
-                font-size: 1.5rem;
+            footer .social-icons a {
+                font-size: 20px;
             }
-        
-            /* Adjust the spacing of Offer Cards */
-            .card {
-                margin: 10px;
+
+            footer a {
+                font-size: 16px;
             }
         }
-        
-        /* Media query for small screens */
-        @media (max-width: 576px) {
-            /* Further reduce the font size of the page title */
-            h1 {
-                font-size: 1.2rem;
+        /* Navbar styling */
+        .navbar {
+        background-color: #dba212 /* Change to your desired background color */
+        }
+        .navbar-brand img {
+        border-radius: 6%;
+        padding-left: 9%;
+        }
+
+        /* Dropdown styling */
+        .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        }
+        .navbar-nav .nav-item {
+            padding: 15px; /* Adjust the padding as needed */
+            transition: transform 0.2s; /* Add transition for smoother animation */
+        }
+        /* Hide sections initially */
+        .my-5 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        /* Style for the search input field */
+        .input-group .form-control {
+            border-radius: 0; /* Remove rounded corners */
+            border-right: none; /* Remove right border */
+        }
+
+        /* Style for the search icon button */
+        .input-group .btn {
+            border-radius: 0; /* Remove rounded corners */
+            background-color: #f0eaea; /* Match the background color */
+            margin: auto;
+        }
+
+  /* Footer styling */
+  footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: #f0c60a; /* Hover color */
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons a {
+            font-size: 24px;
+        }
+
+        footer .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        footer .social-icons a:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        /* Additional features */
+        .address,
+        .phone,
+        .email {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            footer .social-icons a {
+                font-size: 20px;
             }
-        
-            /* Make Offer Cards stack vertically for better mobile display */
-            .row {
-                flex-direction: column;
-            }
-        
-            /* Center align the Offer Cards */
-            .card {
-                margin: 10px auto;
-            }
-        
-            /* Adjust the size of Offer Card images for small screens */
-            .card img {
-                max-width: 100%;
-                height: auto;
+
+            footer a {
+                font-size: 16px;
             }
         }
-        </style>
-   <nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
-    <a class="navbar-brand" href="#" style="color: #f5f5f5;">EAT@</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/templates/index.html"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li class="nav-item">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-tags"></i> Offers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-phone"></i> Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-users"></i> About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-star"></i> Specials</a>
-            </li>
-            <div class="dropdown">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> My Profile</a>
-                <div class="dropdown-content">
-                    <div class="sub-dropdown">
-                        <a href="#">View Profile</a>
-                        <div class="sub-dropdown-content">
-                            <a href="#">Profile Option 1</a>
-                            <a href="#">Profile Option 2</a>
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-yellow">
+    <a class="navbar-brand" href="#">
+        <img src="/imgs/logo.jpg" alt="Your Logo" width="100" height="100" class="rounded-3" style="margin-left: 5%; padding: 5%;">
+    </a>
+    <div class="container;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #dba212; padding-right: 0%;">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/templates/index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-utensils me-2"></i> Restaurants
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <li><a class="dropdown-item" href="#">Nearby</a></li>
+                        <li><a class="dropdown-item" href="#">Popular</a></li>
+                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-tags me-2"></i> Offers
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="/templates/offers.html">Discounts</a></li> <!-- Fixed typo here -->
+                        <li><a class="dropdown-item" href="#">Combo Offers</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutus"><i class="fas fa-info-circle me-2"></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/templates/menu.html"><i class="fas fa-book-open me-2"></i> Our Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#specials"><i class="fas fa-star me-2"></i> Specials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-us-section"><i class="fas fa-phone me-2"></i> Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <li><a class="dropdown-item" href="/templates/profile.html">View Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" style="background-color: #f0eaea;">
+                        <div class="input-group-append" style="background-color: #f0eaea;">
+                            <button class="btn btn-outline-success" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="sub-dropdown">
-                        <a href="#">Settings</a>
-                        <div class="sub-dropdown-content">
-                            <a href="#">Setting Option 1</a>
-                            <a href="#">Setting Option 2</a>
-                        </div>
-                    </div>
-                    <a href="#">Logout</a>
-                </div>
-            </div>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
     <!-- Content Section for Offers -->
     <div class="container mt-5">
-        <h1>Special Offers</h1>
+        <h1>Special Offers & Discount</h1>
         <p>Check out our latest special offers and discounts.</p>
 
         <!-- Offer Cards -->
@@ -401,10 +491,84 @@
 
     <!-- Footer (You can reuse the same footer from your previous HTML file) -->
     <!-- Include the footer code from your existing HTML file -->
-
+    <script>
+            // Add smooth scrolling to anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000); // You can adjust the duration (in milliseconds) to control the scroll speed
+                }
+            });
+    
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        // Function to handle animations
+        function animateSections() {
+            const sections = document.querySelectorAll('.my-5');
+    
+            sections.forEach((section) => {
+                if (isInViewport(section)) {
+                    section.style.opacity = 1;
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        // Add an event listener for scroll
+        window.addEventListener('scroll', animateSections);
+        // Initial call to animate sections when the page loads
+        animateSections();
+    </script>
     <!-- Add Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle the navigation when the toggle icon is clicked
+            $('.navbar-toggler').click(function() {
+                $('#navbarNav').toggleClass('show');
+            });
+        });
+    </script>  
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>Welcome to Eat@, your one-stop destination for delicious food delivered to your doorstep. We are passionate about serving quality meals made from fresh ingredients.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Information</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> 9791234293</li>
+                        <li><i class="fas fa-envelope"></i> info@eatat.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Connect with Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="fab fa-facebook" style="color: rgb(0, 51, 255);"></a>
+                        <a href="#" class="fab fa-instagram" style="color: rgb(255, 30, 0);"></a>
+                        <a href="#" class="fab fa-linkedin" style="color: rgb(0, 123, 255);"></a>
+                        <a href="#" class="fab fa-pinterest" style="color: rgb(255, 0, 0);"></a>
+                        <!-- Add more social icons as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
